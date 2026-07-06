@@ -9,6 +9,7 @@ struct ContentView: View {
     @State private var lastScanDate: Date?
     @State private var storageStatus = StorageStatus.current()
     @State private var isStorageStatusPresented = false
+    @State private var isSettingsPresented = false
     @State private var isTrashConfirmationPresented = false
     @State private var cleaningProgress: (current: Int, total: Int, itemName: String)?
     @State private var scanMessage: String?
@@ -108,6 +109,18 @@ struct ContentView: View {
             .buttonStyle(.plain)
             .foregroundStyle(AppColors.secondaryText)
             .disabled(isScanning || isCleaning)
+
+            Button {
+                isSettingsPresented = true
+            } label: {
+                Image(systemName: "gearshape")
+            }
+            .buttonStyle(.plain)
+            .foregroundStyle(AppColors.secondaryText)
+            .popover(isPresented: $isSettingsPresented) {
+                SettingsPanel()
+                    .frame(minWidth: 240)
+            }
         }
         .padding(.horizontal, 16)
         .padding(.vertical, 13)
