@@ -1,9 +1,9 @@
 # Repository Guidelines
 
 ## Project Structure & Module Organization
-This is a new macOS SwiftUI app managed through Xcode. The main source file is `Untitled Project/MyApp/ContentView.swift`, which currently contains the app entry point, menu bar UI, views, and simple models. Built output appears under `Untitled Project/Products/MyApp.app`; do not edit built products manually.
+This is a macOS SwiftUI menu bar app managed through Xcode. Source lives under `SystemCleam/`, split by responsibility: `MyApp.swift` (entry point), `ContentView.swift` (main layout), `Models/` (`CleanupModels.swift`, `StorageStatus.swift`), `Services/` (`CleanupScanner.swift`), and `Views/` (`AppColors.swift`, `CleanupCategorySection.swift`, `CleanupItemRow.swift`, `SegmentedProgressBar.swift`, `StorageStatusPanel.swift`). Do not edit built products manually.
 
-As the app grows, keep source files under `Untitled Project/MyApp/` and split large files by responsibility, for example `CleanupScanner.swift`, `StorageStatus.swift`, or `CleanupItemRow.swift`. No test or asset directories are currently present.
+As the app grows, keep new source files under `SystemCleam/` in the folder matching their responsibility. No test or asset directories are currently present.
 
 ## Build, Test, and Development Commands
 Use Xcode as the source of truth for building and running.
@@ -25,6 +25,6 @@ No test target exists yet. For future logic, use the Swift Testing framework for
 For now, validate every change by building in Xcode and manually checking that the menu bar app opens and responds correctly.
 
 ## Commit & Pull Request Guidelines
-This project has no established Git history yet. Use short, imperative commit messages, for example `Add cleanup scanner` or `Update menu bar UI`.
+Use short, imperative commit messages, for example `Add cleanup scanner` or `Update menu bar UI`.
 
 Pull requests should include a clear summary, testing performed, screenshots for UI changes, and notes about any macOS permissions or file-system behavior.
