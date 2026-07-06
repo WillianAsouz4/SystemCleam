@@ -7,6 +7,10 @@ grandes esquecidos em Downloads/Desktop/Documents.
 Feito como projeto de hobby em SwiftUI, sem sandbox, sem telemetria, sem
 dependências externas.
 
+<p align="center">
+  <img src="docs/screenshots/app-preview.png" alt="Painel do SystemCleam mostrando uso de disco e cache de apps" width="360">
+</p>
+
 ## Funcionalidades
 
 - **Uso de disco**: mostra o espaço livre real (mesma métrica do Ajustes do
